@@ -20,11 +20,11 @@ Launch vim and run:
 :PluginInstall
 ```
 
-Finally, you should make YouCompleteMe work. Run the following:
+Finally, you should make YouCompleteMe work (need some c libraries etc.). Run the following:
 ```Bash
 sudo apt install build-essential cmake python3-dev
 ```
-And compile it
+and finally:
 
 ```Bash
 cd ~/.vim/bundle/YouCompleteMe
