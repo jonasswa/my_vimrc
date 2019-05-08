@@ -32,3 +32,27 @@ python3 install.py --clang-completer
 ```
 
 .. and you're good to go
+
+Some key bindings to get you started:
+
+|Command		|Key				|
+|-----------------------|-------------------------------|
+|SPLIT SCREEN		|ctrl+w + v			|
+|TRAVERSE SPLITS	|ctrl+Up or ctrl+Left or ...	|
+|CLOSE			|ctrl+w + q			|
+|TOGGLE SIDEBAR		|ctrl+n				|
+|REDO			|ctrl+R				|
+|UNDO			|u				|
+|MARK			|v				|
+|MARK ROW		|ctrl+v				|
+|COPY			|y				|
+|DELETE/CUT		|d				|
+|PASTE			|p				|
+|TOGGLE fzf		|ctrl+f				|
+|SKIP 5 ROWS		|ctrl+Up or ctrl+Down		|
+|SEARCH FORW.  		|/*pattern*			|
+|SEARCH BACKW  		|?*pattern*			|
+|NEXT IN SEARCH		|n or N				|
+|SAVE			|:w				|
+|QUIT			|:q				|
+
