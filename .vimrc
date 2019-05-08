@@ -11,13 +11,16 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" add all your plugins here (note older versions of Vundle
+" add all plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'scrooloose/nerdtree'
-
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'bling/vim-airline'
 Bundle 'Valloric/YouCompleteMe'
 
 " All Plugins must be added before the following line
@@ -30,8 +33,28 @@ set nu
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
+
+" Making a shortcut for jumping multiple lines at once
+noremap <C-Up> 5k
+noremap <C-Down> 5j
+
+" Map key for search using fzf
+map <C-f> :Files<CR>
+
 " Enable folding with the spacebar
-nnoremap <space> za
+noremap <space> za
+
+
+" Modifying indent guides
+
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_guide_size = 1
+let g:indent_guides_color_change_percent = 3
+let g:indent_guides_enable_on_vim_startup = 1 
+
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey
+
 
 " Set up how to handle .py files
 au BufNewFile,BufRead *.py
