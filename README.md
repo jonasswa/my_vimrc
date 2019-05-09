@@ -5,7 +5,7 @@ Add the .vimrc file to your home dir. After that, follow the steps below.
 ```bash
 sudo apt-get remove vim-tiny
 sudo apt-get update
-sudo apt-get install vim
+sudo apt-get install vim-gtk
 ```
 
 Get Vundle for handling packages:
@@ -38,13 +38,13 @@ Some key bindings to get you started:
 |Command		|Key				|
 |-----------------------|-------------------------------|
 |SPLIT SCREEN		|ctrl+w + v			|
-|TRAVERSE SPLITS	|ctrl+Up or ctrl+Left or ...	|
+|TRAVERSE SPLITS	|ctrl+w+Up or ctrl+w+Left or ...|
 |CLOSE			|ctrl+w + q			|
 |TOGGLE SIDEBAR		|ctrl+n				|
 |REDO			|ctrl+R				|
 |UNDO			|u				|
 |MARK			|v				|
-|MARK ROW		|ctrl+v				|
+|MARK ROW		|shift+v			|
 |COPY			|y				|
 |DELETE/CUT		|d				|
 |PASTE			|p				|

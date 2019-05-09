@@ -44,7 +44,8 @@ map <C-f> :Files<CR>
 " Enable folding with the spacebar
 noremap <space> za
 
-
+" Set system clipboard
+set clipboard=unnamed
 " Modifying indent guides
 
 let g:indent_guides_auto_colors = 0
