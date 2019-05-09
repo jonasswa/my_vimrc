@@ -39,6 +39,7 @@ Some key bindings to get you started:
 |-----------------------|-------------------------------|
 |SPLIT SCREEN		|ctrl+w + v			|
 |TRAVERSE SPLITS	|ctrl+w+Up or ctrl+w+Left or ...|
+|VERTICAL SPLIT		|:sp				|
 |CLOSE			|ctrl+w + q			|
 |TOGGLE SIDEBAR		|ctrl+n				|
 |REDO			|ctrl+R				|
