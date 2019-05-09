@@ -45,7 +45,7 @@ map <C-f> :Files<CR>
 noremap <space> za
 
 " Set system clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 " Modifying indent guides
 
 let g:indent_guides_auto_colors = 0
