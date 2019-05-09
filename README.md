@@ -53,6 +53,7 @@ Some key bindings to get you started:
 |SEARCH FORW.  		|/*pattern*			|
 |SEARCH BACKW  		|?*pattern*			|
 |NEXT IN SEARCH		|n or N				|
+|INDENT SELECTION	|< or >				|
 |SAVE			|:w				|
 |QUIT			|:q				|
 
