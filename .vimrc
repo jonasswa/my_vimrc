@@ -21,6 +21,7 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'bling/vim-airline'
+Plugin 'sjl/badwolf'
 Bundle 'Valloric/YouCompleteMe'
 
 " All Plugins must be added before the following line
@@ -29,6 +30,13 @@ filetype plugin indent on    " required
 
 " Adds numbers on the side, always
 set nu
+
+" Set color
+if &term =~ '256color'
+	    set t_ut=
+    endif
+
+colorscheme badwolf
 
 " Enable folding
 set foldmethod=indent
