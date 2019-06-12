@@ -37,24 +37,24 @@ Some key bindings to get you started:
 
 |Command		|Key				|
 |-----------------------|-------------------------------|
-|SPLIT SCREEN		|ctrl+w + v			|
-|TRAVERSE SPLITS	|ctrl+w+Up or ctrl+w+Left or ...|
+|SPLIT SCREEN		|<kbd>ctrl</kbd>+<kbd>w</kbd> + <kbd>v</kbd>			|
+|TRAVERSE SPLITS	|<kbd>ctrl</kbd>+<kbd>w</kbd>+<kbd>Up</kbd> or <kbd>ctrl</kbd>+<kbd>w</kbd>+<kbd>Left</kbd> or ...|
 |VERTICAL SPLIT		|:sp				|
-|CLOSE			|ctrl+w + q			|
-|TOGGLE SIDEBAR		|ctrl+n				|
-|REDO			|ctrl+R				|
-|UNDO			|u				|
-|MARK			|v				|
-|MARK ROW		|shift+v			|
-|COPY			|y				|
-|DELETE/CUT		|d				|
-|PASTE			|p				|
-|TOGGLE fzf		|ctrl+f				|
-|SKIP 5 ROWS		|ctrl+Up or ctrl+Down		|
+|CLOSE			|<kbd>ctrl</kbd>+<kbd>w</kbd> + <kbd>q</kbd>			|
+|TOGGLE SIDEBAR		|<kbd>ctrl</kbd>+<kbd>n</kbd>				|
+|REDO			|<kbd>ctrl</kbd>+<kbd>R</kbd>				|
+|UNDO			|<kbd>u</kbd>				|
+|MARK			|<kbd>v</kbd>				|
+|MARK ROW		|<kbd>shift</kbd>+<kbd>v</kbd>			|
+|COPY			|<kbd>y</kbd>				|
+|DELETE/CUT		|<kbd>d</kbd>				|
+|PASTE			|<kbd>p</kbd>				|
+|TOGGLE fzf		|<kbd>ctrl</kbd>+<kbd>f</kbd>				|
+|SKIP 5 ROWS		|<kbd>ctrl</kbd>+<kbd>Up</kbd> or <kbd>ctrl</kbd>+<kbd>Down</kbd>		|
 |SEARCH FORW.  		|/*pattern*			|
 |SEARCH BACKW  		|?*pattern*			|
-|NEXT IN SEARCH		|n or N				|
-|INDENT SELECTION	|< or >				|
+|NEXT IN SEARCH		|<kbd>n</kbd> or <kbd>N</kbd>				|
+|INDENT SELECTION	|<kbd><</kbd> or <kbd>></kbd>				|
 |SAVE			|:w				|
 |QUIT			|:q				|
 
