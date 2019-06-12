@@ -20,7 +20,7 @@ Launch vim and run:
 :PluginInstall
 ```
 
-Finally, you should make YouCompleteMe work (need some c libraries etc.). Run the following:
+Finally, you should make YouCompleteMe work. Run the following:
 ```Bash
 sudo apt install build-essential cmake python3-dev
 ```
@@ -58,3 +58,14 @@ Some key bindings to get you started:
 |SAVE			|:w				|
 |QUIT			|:q				|
 
+**To coment multiple lines, do the following:**
+
+<kbd>CTRL</kbd>+<kbd>v</kbd> - Activate visual block
+
+<em>Mark the rows you want to comment out using the arrow keys</em>
+
+<kbd>SHIFT</kbd>+<kbd>i</kbd> - Activate insert mode
+
+<kbd>#</kbd> - Insert #
+
+<kbd>ESC</kbd> <kbd>ESC</kbd> - Exit insert, and visual mode (apply)
