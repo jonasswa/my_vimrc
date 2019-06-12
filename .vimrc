@@ -90,6 +90,7 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_python_binary_path = 'python'
+let g:ycm_autoclose_preview_window_after_completion = 1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
