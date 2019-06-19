@@ -55,6 +55,8 @@ Some key bindings to get you started:
 |SEARCH BACKW  		|?*pattern*			|
 |NEXT IN SEARCH		|<kbd>n</kbd> or <kbd>N</kbd>				|
 |INDENT SELECTION	|<kbd><</kbd> or <kbd>></kbd>				|
+|MORE VIEWPORT UP	|<kbd>ctrl</kbd>+<kbd>e</kbd>				|
+|MORE VIEWPORT DOWN	|<kbd>ctrl</kbd>+<kbd>y</kbd>				|
 |SAVE			|:w				|
 |QUIT			|:q				|
 
