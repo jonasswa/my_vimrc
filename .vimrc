@@ -22,7 +22,10 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'bling/vim-airline'
 Plugin 'sjl/badwolf'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
+"https://github.com/ycm-core/YouCompleteMe"
+Plugin 'airblade/vim-gitgutter' 
+" https://github.com/airblade/vim-gitgutter"
 
 " All Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,6 +44,13 @@ colorscheme badwolf
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
+
+" Automatic closing brackets
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
 
 " Making a shortcut for jumping multiple lines at once
 noremap <C-Up> 5k
