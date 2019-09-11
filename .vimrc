@@ -22,7 +22,7 @@ Plugin 'ajh17/VimCompletesMe' " Lightweight
 Plugin 'airblade/vim-gitgutter' "https://github.com/airblade/vim-gitgutter
 Plugin 'tpope/vim-fugitive'
 Plugin 'jiangmiao/auto-pairs'
-
+Plugin 'tpope/vim-commentary'
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
