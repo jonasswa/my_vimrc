@@ -1,18 +1,10 @@
 set nocompatible              " required
 filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-
-" add all plugins here (note older versions of Vundle
-" used Bundle instead of Plugin)
 
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tmhedberg/SimpylFold'
@@ -28,10 +20,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'ajh17/VimCompletesMe' " Lightweight
 "Plugin 'Valloric/YouCompleteMe' "https://github.com/ycm-core/YouCompleteMe
 Plugin 'airblade/vim-gitgutter' "https://github.com/airblade/vim-gitgutter
-
-" Kite status line"
-set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
-set laststatus=2  " always display the status line
+Plugin 'jiangmiao/auto-pairs'
 
 " All Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,20 +34,18 @@ if &term =~ '256color'
 	    set t_ut=
     endif
 
-
-
 colorscheme badwolf
 
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
 
-" Automatic closing brackets
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
+" Automatic closing brackets (disabled, as auto-pairs is installed)
+" inoremap " ""<left>
+" inoremap ' ''<left>
+" inoremap ( ()<left>
+" inoremap [ []<left>
+" inoremap { {}<left>
 
 " Making a shortcut for jumping multiple lines at once
 noremap <C-Up> 5k
@@ -114,7 +101,7 @@ autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype htmldjango setlocal ts=2 sw=2 expandtab
 
-" Let nerdtree hide some files, autoclose if nertree is only one open
+" Let nerdtree hide some files, autoclose if nertree is the only one open
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 autocmd vimenter * NERDTree
