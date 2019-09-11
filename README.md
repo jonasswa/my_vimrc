@@ -47,7 +47,7 @@ Some key bindings to get you started:
 |MORE VIEWPORT UP	|<kbd>ctrl</kbd>+<kbd>e</kbd>				|
 |MORE VIEWPORT DOWN	|<kbd>ctrl</kbd>+<kbd>y</kbd>				|
 |EXPAND SNIPPETS	|<kbd>ctrl</kbd>+<kbd>j</kbd>				|
-|SNIPPET FORWARD	|<kbd>ctrl</kbd>+<kbd>b</kbd>				|
+|SNIPPET FORWARD	|<kbd>ctrl</kbd>+<kbd>j</kbd>				|
 |SNIPPET BACKWARD	|<kbd>ctrl</kbd>+<kbd>z</kbd>				|
 |SAVE			|:w				|
 |QUIT			|:q				|
