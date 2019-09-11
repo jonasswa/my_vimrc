@@ -20,10 +20,6 @@ Launch vim and run:
 :PluginInstall
 ```
 
-Finally, you should make YouCompleteMe work. Run the following:
-```Bash
-sudo apt install build-essential cmake python3-dev
-```
 and finally:
 
 ```Bash
