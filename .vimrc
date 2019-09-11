@@ -20,6 +20,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'ajh17/VimCompletesMe' " Lightweight
 "Plugin 'Valloric/YouCompleteMe' "https://github.com/ycm-core/YouCompleteMe
 Plugin 'airblade/vim-gitgutter' "https://github.com/airblade/vim-gitgutter
+Plugin 'tpope/vim-fugitive'
 Plugin 'jiangmiao/auto-pairs'
 
 " All Plugins must be added before the following line
@@ -64,9 +65,10 @@ imap <silent> <PageUp> <C-O>1000<C-U>
 imap <silent> <PageDown> <C-O>1000<C-D>
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger= "<c-j>"
+let g:UltiSnipsJumpForwardTrigger= "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger= "<c-k>"
+let g:UltiSnipsUsePythonVersion = 3
 
 " Modifying indent guides
 let g:indent_guides_auto_colors = 0
