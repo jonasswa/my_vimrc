@@ -20,13 +20,6 @@ Launch vim and run:
 :PluginInstall
 ```
 
-and finally:
-
-```Bash
-cd ~/.vim/bundle/YouCompleteMe
-python3 install.py --clang-completer
-```
-
 .. and you're good to go
 
 Some key bindings to get you started:
