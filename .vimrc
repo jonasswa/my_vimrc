@@ -22,10 +22,16 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'bling/vim-airline'
 Plugin 'sjl/badwolf'
-Plugin 'Valloric/YouCompleteMe'
-"https://github.com/ycm-core/YouCompleteMe"
-Plugin 'airblade/vim-gitgutter' 
-" https://github.com/airblade/vim-gitgutter"
+Plugin 'machakann/vim-highlightedyank'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'ajh17/VimCompletesMe' " Lightweight
+"Plugin 'Valloric/YouCompleteMe' "https://github.com/ycm-core/YouCompleteMe
+Plugin 'airblade/vim-gitgutter' "https://github.com/airblade/vim-gitgutter
+
+" Kite status line"
+set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
+set laststatus=2  " always display the status line
 
 " All Plugins must be added before the following line
 call vundle#end()            " required
@@ -38,6 +44,8 @@ set nu
 if &term =~ '256color'
 	    set t_ut=
     endif
+
+
 
 colorscheme badwolf
 
@@ -62,10 +70,18 @@ map <C-f> :Files<CR>
 " Enable folding with the spacebar
 noremap <space> za
 
-" Set system clipboard
-set clipboard=unnamedplus
-" Modifying indent guides
+" Fixing page up and page down issues
+map <silent> <PageUp> 1000<C-U>
+map <silent> <PageDown> 1000<C-D>
+imap <silent> <PageUp> <C-O>1000<C-U>
+imap <silent> <PageDown> <C-O>1000<C-D>
 
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Modifying indent guides
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 3
@@ -74,6 +90,8 @@ let g:indent_guides_enable_on_vim_startup = 1
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
 
+" Set system clipboard
+set clipboard=unnamedplus
 
 " Set up how to handle .py files
 au BufNewFile,BufRead *.py
@@ -92,6 +110,10 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set softtabstop=2 |
     \ set shiftwidth=2
 
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype htmldjango setlocal ts=2 sw=2 expandtab
+
 " Let nerdtree hide some files, autoclose if nertree is only one open
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
@@ -104,8 +126,3 @@ let g:ycm_python_binary_path = 'python'
 let g:ycm_autoclose_preview_window_after_completion = 1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-" Fixing page up and page down issues
-map <silent> <PageUp> 1000<C-U>
-map <silent> <PageDown> 1000<C-D>
-imap <silent> <PageUp> <C-O>1000<C-U>
-imap <silent> <PageDown> <C-O>1000<C-D>
