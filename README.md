@@ -53,7 +53,8 @@ Some key bindings to get you started:
 |QUIT			|:q				|
 
 **To coment multiple lines, do the following:**
-Manually:
+
+*Manually*:
 
 <kbd>CTRL</kbd>+<kbd>v</kbd> - Activate visual block
 
@@ -65,5 +66,6 @@ Manually:
 
 <kbd>ESC</kbd> <kbd>ESC</kbd> - Exit insert, and visual mode (apply)
 
-Automagically:
-<kbd>g<kbd>c<kbd>
+*Automagically*:
+
+<kbd>g</kbd><kbd>c</kbd>
