@@ -111,5 +111,5 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 let g:ycm_python_binary_path = 'python'
 let g:ycm_autoclose_preview_window_after_completion = 1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
