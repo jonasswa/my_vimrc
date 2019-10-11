@@ -5,7 +5,6 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'scrooloose/nerdtree'
@@ -16,13 +15,16 @@ Plugin 'bling/vim-airline'
 Plugin 'sjl/badwolf'
 Plugin 'machakann/vim-highlightedyank'
 Plugin 'SirVer/ultisnips'
+Plugin 'epilande/vim-react-snippets'
 Plugin 'honza/vim-snippets'
 Plugin 'ajh17/VimCompletesMe' " Lightweight
-"Plugin 'Valloric/YouCompleteMe' "https://github.com/ycm-core/YouCompleteMe
 Plugin 'airblade/vim-gitgutter' "https://github.com/airblade/vim-gitgutter
 Plugin 'tpope/vim-fugitive'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-commentary'
+Plugin 'alvan/vim-closetag'
+Plugin 'pangloss/vim-javascript'
+Plugin 'maxmellon/vim-jsx-pretty'
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -41,13 +43,8 @@ colorscheme badwolf
 set foldmethod=indent
 set foldlevel=99
 
-" Automatic closing brackets (disabled, as auto-pairs is installed)
-" inoremap " ""<left>
-" inoremap ' ''<left>
-" inoremap ( ()<left>
-" inoremap [ []<left>
-" inoremap { {}<left>
-
+let g:vim_jsx_pretty_colorful_config = 1
+let g:vim_jsx_pretty_highlight_close_tag = 1
 " Making a shortcut for jumping multiple lines at once
 noremap <C-Up> 5k
 noremap <C-Down> 5j
@@ -66,15 +63,20 @@ imap <silent> <PageDown> <C-O>1000<C-D>
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger= "<c-j>"
+let g:UltiSnipsListSnippets= "<c-l>"
 let g:UltiSnipsJumpForwardTrigger= "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger= "<c-k>"
 let g:UltiSnipsUsePythonVersion = 3
 
-" Modifying indent guides
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 3
 let g:indent_guides_enable_on_vim_startup = 1 
+
+
+" Options for vim-closetag
+" What file extensions to use
+let g:closetag_filenames = '*.js, *.html,*.xhtml,*.phtml'
 
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
@@ -94,14 +96,14 @@ au BufNewFile,BufRead *.py
     \ set encoding=utf-8
 
 "How to handle .js, .html and .css
-au BufNewFile,BufRead *.js, *.html, *.css
+au BufNewFile,BufRead *.js,*.html,*.css
     \ set tabstop=2 |
     \ set softtabstop=2 |
-    \ set shiftwidth=2
-
-autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 expandtab
-autocmd Filetype html setlocal ts=2 sw=2 expandtab
-autocmd Filetype htmldjango setlocal ts=2 sw=2 expandtab
+    \ set shiftwidth=2|
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+    \ set encoding=utf-8
 
 " Let nerdtree hide some files, autoclose if nertree is the only one open
 autocmd StdinReadPre * let s:std_in=1
