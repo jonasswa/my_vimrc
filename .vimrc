@@ -14,6 +14,7 @@ Plugin 'machakann/vim-highlightedyank'
 Plugin 'jiangmiao/auto-pairs' " Closes stuff
 Plugin 'alvan/vim-closetag' " Closes HTML
 Plugin 'tpope/vim-commentary' " Comment multiple lines
+Plugin 'airblade/vim-gitgutter'
 Plugin 'pangloss/vim-javascript'
 Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'davidhalter/jedi-vim' " Only use for arguments (call signatures)
