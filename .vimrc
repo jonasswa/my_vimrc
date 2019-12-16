@@ -5,26 +5,22 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'tmhedberg/SimpylFold'
+Plugin 'tmhedberg/SimpylFold' " Folds python code properly
 Plugin 'scrooloose/nerdtree'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'bling/vim-airline'
-Plugin 'sjl/badwolf'
 Plugin 'machakann/vim-highlightedyank'
-Plugin 'SirVer/ultisnips'
-Plugin 'epilande/vim-react-snippets'
-Plugin 'honza/vim-snippets'
-Plugin 'ajh17/VimCompletesMe' " Lightweight
-Plugin 'airblade/vim-gitgutter' "https://github.com/airblade/vim-gitgutter
-Plugin 'tpope/vim-fugitive'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-commentary'
-Plugin 'alvan/vim-closetag'
+Plugin 'jiangmiao/auto-pairs' " Closes stuff
+Plugin 'alvan/vim-closetag' " Closes HTML
+Plugin 'tpope/vim-commentary' " Comment multiple lines
 Plugin 'pangloss/vim-javascript'
 Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'davidhalter/jedi-vim' " Only use for arguments (call signatures)
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'junegunn/seoul256.vim'
 " All Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -32,19 +28,12 @@ filetype plugin indent on    " required
 " Adds numbers on the side, always
 set nu
 
-" Set color
-if &term =~ '256color'
-	    set t_ut=
-    endif
-
-colorscheme badwolf
-
-" Enable folding
 set foldmethod=indent
 set foldlevel=99
 
 let g:vim_jsx_pretty_colorful_config = 1
 let g:vim_jsx_pretty_highlight_close_tag = 1
+
 " Making a shortcut for jumping multiple lines at once
 noremap <C-Up> 5k
 noremap <C-Down> 5j
@@ -55,24 +44,28 @@ map <C-f> :Files<CR>
 " Enable folding with the spacebar
 noremap <space> za
 
+" Load deoplete as default
+let g:deoplete#enable_at_startup = 1
+
+" Disable Jedi-vim autocompletion and enable call-signatures options
+let g:jedi#auto_initialization = 1
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#completions_command = ""
+let g:jedi#show_call_signatures = "1"
+
 " Fixing page up and page down issues
 map <silent> <PageUp> 1000<C-U>
 map <silent> <PageDown> 1000<C-D>
 imap <silent> <PageUp> <C-O>1000<C-U>
 imap <silent> <PageDown> <C-O>1000<C-D>
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger= "<c-j>"
-let g:UltiSnipsListSnippets= "<c-l>"
-let g:UltiSnipsJumpForwardTrigger= "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger= "<c-k>"
-let g:UltiSnipsUsePythonVersion = 3
-
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 3
 let g:indent_guides_enable_on_vim_startup = 1 
-
 
 " Options for vim-closetag
 " What file extensions to use
@@ -113,7 +106,7 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-let g:ycm_python_binary_path = 'python'
-let g:ycm_autoclose_preview_window_after_completion = 1
-" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Set theme
+let g:seoul256_background = 234
+colo seoul256
 
