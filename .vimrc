@@ -6,6 +6,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold' " Folds python code properly
+Plugin 'vim-scripts/indentpython.vim' " Proper indent python
+Plugin 'bling/vim-airline' " Better status-line
 Plugin 'scrooloose/nerdtree'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
@@ -21,8 +23,8 @@ Plugin 'davidhalter/jedi-vim' " Only use for arguments (call signatures)
 Plugin 'roxma/nvim-yarp'
 Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'Shougo/deoplete.nvim'
-Plugin 'junegunn/seoul256.vim'
-" All Plugins must be added before the following line
+Plugin 'agude/vim-eldar'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -92,6 +94,7 @@ au BufNewFile,BufRead *.py
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
     \ set textwidth=79 |
+    \ set colorcolumn=72 |
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix |
@@ -116,9 +119,10 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Set theme and fix background color
-let g:seoul256_background = 234
 if &term =~ '256color'
 	    set t_ut=
     endif
-colo seoul256
+let g:eldar_term_text        = "White"
+let g:eldar_term_background  = "Black"
 
+colorscheme eldar
