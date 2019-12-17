@@ -126,3 +126,7 @@ let g:eldar_term_text        = "White"
 let g:eldar_term_background  = "Black"
 
 colorscheme eldar
+
+" fix jedi with eldar theme
+hi jediFunction term=NONE cterm=NONE ctermfg=White guifg=Black gui=NONE ctermbg=Grey guibg=Grey
+hi jediFat term=bold,underline cterm=bold,underline ctermfg=Red gui=bold,underline ctermbg=0 guibg=#555555
