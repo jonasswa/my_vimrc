@@ -115,7 +115,10 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Set theme
+" Set theme and fix background color
 let g:seoul256_background = 234
+if &term =~ '256color'
+	    set t_ut=
+    endif
 colo seoul256
 
