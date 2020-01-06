@@ -1,32 +1,28 @@
-set nocompatible              " required
-filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tmhedberg/SimpylFold' " Folds python code properly
-Plugin 'vim-scripts/indentpython.vim' " Proper indent python
-Plugin 'bling/vim-airline' " Better status-line
-Plugin 'scrooloose/nerdtree'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'machakann/vim-highlightedyank'
-Plugin 'jiangmiao/auto-pairs' " Closes stuff
-Plugin 'alvan/vim-closetag' " Closes HTML
-Plugin 'tpope/vim-commentary' " Comment multiple lines
-Plugin 'airblade/vim-gitgutter'
-Plugin 'pangloss/vim-javascript'
-Plugin 'maxmellon/vim-jsx-pretty'
-Plugin 'davidhalter/jedi-vim' " Only use for arguments (call signatures)
-Plugin 'roxma/nvim-yarp'
-Plugin 'roxma/vim-hug-neovim-rpc'
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'agude/vim-eldar'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#begin('~/.vim/plugged')
+Plug 'gmarik/Vundle.vim'
+Plug 'tmhedberg/SimpylFold' " Folds python code properly
+Plug 'vim-scripts/indentpython.vim' " Proper indent python
+Plug 'bling/vim-airline' " Better status-line
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'machakann/vim-highlightedyank'
+Plug 'jiangmiao/auto-pairs' " Closes stuff
+Plug 'alvan/vim-closetag' " Closes HTML
+Plug 'tpope/vim-commentary' " Comment multiple lines
+Plug 'airblade/vim-gitgutter'
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'agude/vim-eldar'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
 
 " Adds numbers on the side, always
 set nu
@@ -50,13 +46,13 @@ noremap <space> za
 let g:deoplete#enable_at_startup = 1
 
 " Disable Jedi-vim autocompletion and enable call-signatures options
-let g:jedi#auto_initialization = 1
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#completions_command = ""
-let g:jedi#show_call_signatures = "1"
+" let g:jedi#auto_initialization = 1
+" let g:jedi#completions_enabled = 0
+" let g:jedi#auto_vim_configuration = 0
+" let g:jedi#smart_auto_mappings = 0
+" let g:jedi#popup_on_dot = 0
+" let g:jedi#completions_command = ""
+" let g:jedi#show_call_signatures = "1"
 
 " Fixing page up and page down issues
 map <silent> <PageUp> 1000<C-U>
